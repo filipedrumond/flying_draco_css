@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>particles.js</title>
+	<meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+	<meta name="author" content="Vincent Garreau" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" media="screen" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="particles-js">
+		<div class="dragao">
+			<div class='dragao_corpo flag'></div>
+			<div class="dragao_cabeca"></div>
+			<div class="espiral">		
+				<div class="particulas"></div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+<script>
+	var h = $('.flag').width();
+	for(var i = 0; i < h; i++){
+		var flagElement = $("<div class='flag-element'>");
+		flagElement.css('background-position', -i + "px 0");
+		flagElement.css('-webkit-animation-delay', i * 4 + 'ms');
+		$('.flag').append(flagElement);
+	}
+	j=0;
+	while(j<80){
+		var poeira =$("<div class='poeira'>");
+		poeira.css('-webkit-animation-delay', j * 50 + 'ms');
+		poeira.css('margin-left', j*5+'px');
+		$(".particulas").append(poeira);
+
+		var poeira2 =$("<div class='poeira2'>");
+		poeira2.css('-webkit-animation-delay', j * 50 + 'ms');
+		poeira2.css('margin-left', j*5+'px');
+		$(".particulas").append(poeira2);
+		j++;
+	}
+</script>
+</html>
